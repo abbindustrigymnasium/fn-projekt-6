@@ -2,7 +2,8 @@
 <template>
     <div>
       <Navbar></Navbar>
-      <slot />
+      <!-- <slot /> -->
+      <NuxtPage/>
       <Footer></Footer>
     </div>
 </template>

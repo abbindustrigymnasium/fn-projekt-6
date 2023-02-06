@@ -59,9 +59,11 @@
                                                 alt="" />
                                         </div>
 											<div class="ml-3 cursor-pointer ">
+                                                <a href="/randomprofile">
 												<p class="text-gray-900 whitespace-no-wrap">
 													Vera Carpenter
 												</p>
+                                                </a>
 											</div>
 										</div>
 								</td>

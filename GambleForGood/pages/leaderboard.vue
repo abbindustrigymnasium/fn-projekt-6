@@ -1,9 +1,9 @@
 <template>
-   <div class="bg-white p-8 w-full">
+   <div class="bg-gray-800 p-8 w-full">
 	<div class=" flex items-center justify-between pb-6">
 		<div>
-			<h2 class="text-gray-600 font-semibold">Leaderboard</h2>
-			<span class="text-xs">All donators</span>
+			<h2 class="text-gray-200 font-semibold">Leaderboard</h2>
+			<span class="text-xs text-gray-200">All donators</span>
 		</div>
 		<div class="flex items-center justify-between">
 			<div class="flex bg-gray-50 items-center p-2 rounded-md">
@@ -28,30 +28,30 @@
 						<thead>
 							<tr>
 								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									class="px-5 py-3 border-b-2 border-gray-600 bg-gray-900 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Name
 								</th>
 								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									class="px-5 py-3 border-b-2 border-gray-600 bg-gray-900 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Money donated
 								</th>
 								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									class="px-5 py-3 border-b-2 border-gray-600 bg-gray-900 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Money won
 								</th>
 								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									class="px-5 py-3 border-b-2 border-gray-600 bg-gray-900 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Created at
 								</th>
 								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									class="px-5 py-3 border-b-2 border-gray-600 bg-gray-900 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Status
 								</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
 									<div class="flex items-center">
 										<div class="flex-shrink-0 w-10 h-10">
 											<img class="w-full h-full rounded-full"
@@ -60,27 +60,27 @@
                                         </div>
 											<div class="ml-3 cursor-pointer ">
                                                 <a href="/randomprofile">
-												<p class="text-gray-900 whitespace-no-wrap">
+												<p class="text-white whitespace-no-wrap">
 													Vera Carpenter
 												</p>
                                                 </a>
 											</div>
 										</div>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">11000$</p>
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">11000$</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">
 										20$
 									</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">
 										Jan 21, 2020
 									</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
 									<span
                                         class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden
@@ -90,7 +90,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
 									<div class="flex items-center">
 										<div class="flex-shrink-0 w-10 h-10">
 											<img class="w-full h-full rounded-full"
@@ -98,26 +98,26 @@
                                                 alt="" />
                                         </div>
 											<div class="ml-3 cursor-pointer">
-												<p class="text-gray-900 whitespace-no-wrap">
+												<p class="text-white whitespace-no-wrap">
 													Blake Bowman
 												</p>
 											</div>
 										</div>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">3500$</p>
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">3500$</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">
 										77$
 									</p>
                                 </td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">
 										Jan 01, 2020
 									</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
 									<span
                                         class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden
@@ -127,7 +127,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
 									<div class="flex items-center">
 										<div class="flex-shrink-0 w-10 h-10">
 											<img class="w-full h-full rounded-full"
@@ -135,26 +135,26 @@
                                                 alt="" />
                                         </div>
 											<div class="ml-3 cursor-pointer">
-												<p class="text-gray-900 whitespace-no-wrap">
+												<p class="text-white whitespace-no-wrap">
 													Dana Moore
 												</p>
 											</div>
 										</div>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">975$</p>
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">975$</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">
 										200$
 									</p>
                                 </td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">
 										Jan 10, 2020
 									</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								<td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
 									<span
                                         class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
                                         <span aria-hidden
@@ -164,7 +164,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="px-5 py-5 bg-white text-sm">
+								<td class="px-5 py-5 bg-gray-800 text-sm">
 									<div class="flex items-center">
 										<div class="flex-shrink-0 w-10 h-10">
 											<img class="w-full h-full rounded-full"
@@ -172,22 +172,22 @@
                                                 alt="" />
                                         </div>
 											<div class="ml-3 cursor-pointer">
-												<p class="text-gray-900 whitespace-no-wrap">
+												<p class="text-white whitespace-no-wrap">
 													Alonzo Cox
 												</p>
 											</div>
 										</div>
 								</td>
-								<td class="px-5 py-5 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">800$</p>
+								<td class="px-5 py-5 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">800$</p>
 								</td>
-								<td class="px-5 py-5 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">0$</p>
+								<td class="px-5 py-5 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">0$</p>
 								</td>
-								<td class="px-5 py-5 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">Jan 18, 2020</p>
+								<td class="px-5 py-5 bg-gray-800 text-sm">
+									<p class="text-gray-200 whitespace-no-wrap">Jan 18, 2020</p>
 								</td>
-								<td class="px-5 py-5 bg-white text-sm">
+								<td class="px-5 py-5 bg-gray-800 text-sm">
 									<span
                                         class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                         <span aria-hidden
@@ -199,8 +199,8 @@
 						</tbody>
 					</table>
 					<div
-						class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
-						<span class="text-xs xs:text-sm text-gray-900">
+						class="px-5 py-5 bg-gray-800 border-t border-gray-600 flex flex-col xs:flex-row items-center xs:justify-between          ">
+						<span class="text-xs xs:text-sm text-gray-200">
                             Showing 1 to 4 of 50 Entries
                         </span>
 						<div class="inline-flex mt-2 xs:mt-0">

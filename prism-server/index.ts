@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express'
 const app = express()
 var cors = require('cors')
 import { PrismaClient } from '@prisma/client'

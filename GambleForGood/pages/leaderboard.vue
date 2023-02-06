@@ -1,5 +1,5 @@
 <template>
-   <div class="bg-white p-8 rounded-md w-full">
+   <div class="bg-white p-8 w-full">
 	<div class=" flex items-center justify-between pb-6">
 		<div>
 			<h2 class="text-gray-600 font-semibold">Leaderboard</h2>

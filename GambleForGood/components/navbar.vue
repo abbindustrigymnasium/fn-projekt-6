@@ -109,7 +109,7 @@
 </template> -->
 
 <template>
-    <nav class="w-full p-6 shadow-lg">
+    <nav class="w-full p-6 shadow-lg bg-gray-900 ">
       <div class="flex items-center justify-between">
         <!-- Header logo -->
   
@@ -117,7 +117,7 @@
         <!-- Mobile toggle -->
         <div>
           <button @click="drawer">
-            <svg class="h-8 w-8 fill-current text-black" fill="none" stroke-linecap="round" stroke-linejoin="round"
+            <svg class="h-8 w-8 fill-current text-white" fill="none" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -132,27 +132,27 @@
         </transition>
         <!-- Drawer Menu -->
         <aside
-          class="p-5 transform top-0 left-0 w-64 fixed bg-white h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+          class="p-5 transform top-0 left-0 w-64 fixed bg-gray-900 h-full overflow-auto ease-in-out transition-all duration-300 z-30     "
           :class="isOpen ? 'translate-x-0' : '-translate-x-full'">
           <div class="close">
             <button class="absolute top-0 right-0 mt-4 mr-4" @click="isOpen = false">
-              <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                viewBox="0 0 24 24 " stroke="white">
                 <path d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
           </div>
           <ul class="divide-y font-sans">
-            <li><button @click="navigate('/')" class="my-4 inline-block text-black">Home</button></li>
-            <li><button @click="navigate('/books')" class="my-4 inline-block text-black">Books</button></li>
-            <li><button @click="navigate('/BarnSida')" class="my-4 inline-block text-black">Kids</button></li>
-            <li><button @click="navigate('/about')" class="my-4 inline-block text-black">About us</button></li>
-            <li><button @click="navigate('/Log_In')" class="my-4 inline-block text-black bg-grey-300">Log In</button></li>
+            <li><button @click="navigate('/')" class="my-4 inline-block text-white">Home</button></li>
+            <li><button @click="navigate('/Casino')" class="my-4 inline-block text-white">Casino</button></li>
+            <li><button @click="navigate('/leaderboard')" class="my-4 inline-block text-white">Leaderboard</button></li>
+            <li><button @click="navigate('/about')" class="my-4 inline-block text-white">About us</button></li>
+            <li><button @click="navigate('/login')" class="my-4 inline-block text-white bg-grey-300">Log In</button></li>
           </ul>
         </aside>
         <!-- Navbar -->
-        <div class="hidden md:block text-5xl font-medium text-center text-gray-700 flex items-center">
-          Navbar
+        <div class="hidden md:block text-5xl font-medium text-center text-white flex items-center ">
+          Gamble For Good
         </div>
         <div></div>
       </div>
@@ -195,6 +195,7 @@
   <style>
   .logo {
     height: 50px;
+
   }
   </style>
   

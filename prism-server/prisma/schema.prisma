@@ -17,7 +17,7 @@ model User {
 
   password String?
 
-  name String?
+  name String? @default("name")
 
   balance Int @default(0)
 

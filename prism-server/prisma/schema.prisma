@@ -18,4 +18,26 @@ model User {
   password String?
 
   name String?
+
+  balance Int @default(0)
+
+  won Int @default(0)
+
+  donated Int @default(0)
+
+  date Int @default(1675769363) //unix timestamp
+
+  suspended Boolean @default(false)
 }
+
+//model organisations {
+//  id Int @id @default(autoincrement())
+//}
+
+//model Payment {
+//  id Int @id @default(autoincrement())
+//
+//  userid Int
+//
+//  to
+//}

@@ -117,7 +117,7 @@ app.post("/getuserbyid", async (req: any, res: any) => {
 //send request like this{"id": 8, "balance": -1439082} positive to add and negative to remove
 app.post("/changebalance", async (req: any, res: any) => {
     try {
-        const addbalance = req.body.balance
+        var addbalance = req.body.balance// to make it accesseble in whole post as vars are accesseble one level higher than they are defined
         const addid = req.body.id
         const user = await prisma.user.findFirst(
             {
@@ -132,6 +132,21 @@ app.post("/changebalance", async (req: any, res: any) => {
             if (sendbalance < 0) {
                 res.json({ "message": "not enough money" })
             } else {
+                const user = await prisma.user.findUnique({
+                    where: {
+                        id: addid
+                    }
+                })
+                const initwonbal = user?.won
+                const newwonlostbal = initwonbal + addbalance
+                const editwonbal = await prisma.user.update({
+                    where: {
+                        id: addid
+                    },
+                    data: {
+                        donated: newwonlostbal
+                    }
+                })
                 const data = await prisma.user.update({
                     where: {
                         id: addid
@@ -157,6 +172,21 @@ app.post("/changebalance", async (req: any, res: any) => {
             }
 
         } else {
+            const user = await prisma.user.findUnique({
+                where: {
+                    id: addid
+                }
+            })
+            const initwonbal = user?.won
+            const newwonlostbal = initwonbal + addbalance
+            const editwonbal = await prisma.user.update({
+                where: {
+                    id: addid
+                },
+                data: {
+                    won: newwonlostbal
+                }
+            })
             const data = await prisma.user.update({
                 where: {
                     id: addid
@@ -192,7 +222,27 @@ app.get("/paymentlog", async (req: any, res: any) => {
     })
     res.json(payments)
 })
-app.get("/leaderboards", async (req: any, res: any) => {
+app.get("/leaderboarddonate", async (req: any, res: any) => {
+    const users = await prisma.user.findMany({
+        orderBy: [
+            {
+                donated: 'desc',
+            },
+        ],
+    })
+    res.send(users)
+})
+app.get("/leaderboardwon", async (req: any, res: any) => {
+    const users = await prisma.user.findMany({
+        orderBy: [
+            {
+                won: 'desc',
+            },
+        ],
+    })
+    res.send(users)
+})
+app.get("/leaderboardbalance", async (req: any, res: any) => {
     const users = await prisma.user.findMany({
         orderBy: [
             {

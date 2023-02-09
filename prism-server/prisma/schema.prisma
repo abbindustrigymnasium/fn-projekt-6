@@ -30,6 +30,14 @@ model User {
   suspended Boolean @default(false)
 }
 
+model Payment {
+  paymentid Int @id @default(autoincrement())
+
+  paymentammount Int
+
+  userid Int
+}
+
 //model organisations {
 //  id Int @id @default(autoincrement())
 //}

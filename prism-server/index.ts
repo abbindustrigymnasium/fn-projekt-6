@@ -113,6 +113,8 @@ app.post("/getuserbyid", async (req: any, res: any) => {
     }
 
 })
+
+//send request like this{"id": 8, "balance": -1439082} positive to add and negative to remove
 app.post("/changebalance", async (req: any, res: any) => {
     try {
         const addbalance = req.body.balance
@@ -126,27 +128,70 @@ app.post("/changebalance", async (req: any, res: any) => {
         )
         const initbalance = user?.balance
         const sendbalance = (initbalance + addbalance)
-        const data = await prisma.user.update({
-            where: {
-                id: addid
-            },
-            data: {
-                balance: sendbalance
+        if (addbalance < 0) {
+            if (sendbalance < 0) {
+                res.json({ "message": "not enough money" })
+            } else {
+                const data = await prisma.user.update({
+                    where: {
+                        id: addid
+                    },
+                    data: {
+                        balance: sendbalance
+                    }
+                })
+                const currentbal = await prisma.user.findFirst({
+                    where: {
+                        id: addid
+                    }
+                })
+                res.json({ "success": true, "currentbal": currentbal?.balance })
+                const logpayment = await prisma.payment.create(
+                    {
+                        data: {
+                            paymentammount: addbalance,
+                            userid: addid
+                        }
+                    }
+                )
             }
-        })
-        const currentbal = await prisma.user.findFirst({
-            where: {
-                id: addid
-            }
-        })
-        res.json({ "success": true, "currentbal": currentbal?.balance })
+
+        } else {
+            const data = await prisma.user.update({
+                where: {
+                    id: addid
+                },
+                data: {
+                    balance: sendbalance
+                }
+            })
+            const currentbal = await prisma.user.findFirst({
+                where: {
+                    id: addid
+                }
+            })
+            res.json({ "success": true, "currentbal": currentbal?.balance })
+            const logpayment = await prisma.payment.create(
+                {
+                    data: {
+                        paymentammount: addbalance,
+                        userid: addid
+                    }
+                }
+            )
+        }
     } catch (e) {
         res.send(e)
     }
 
 })
 
-//works but prisma says error
+app.get("/paymentlog", async (req: any, res: any) => {
+    const payments = await prisma.payment.findMany({
+
+    })
+    res.json(payments)
+})
 app.get("/leaderboards", async (req: any, res: any) => {
     const users = await prisma.user.findMany({
         orderBy: [
@@ -155,10 +200,5 @@ app.get("/leaderboards", async (req: any, res: any) => {
             },
         ],
     })
-    res.send(users)
-})
-
-app.get("/allusers", async (req: any, res: any) => {
-    const users = await prisma.user.findMany()
     res.send(users)
 })

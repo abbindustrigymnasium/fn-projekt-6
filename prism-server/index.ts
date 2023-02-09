@@ -74,6 +74,7 @@ app.post("/signup", async (req: any, res: any) => {
 
                 password: password,
 
+                date: Math.round(Date.now() / 1000)//unix timestamp (seconds)
 
             },
 

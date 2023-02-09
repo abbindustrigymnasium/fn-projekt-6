@@ -25,7 +25,7 @@ model User {
 
   donated Int @default(0)
 
-  date Int @default(1675769363) //unix timestamp
+  date Float //@default(1675769363) //unix timestamp
 
   suspended Boolean @default(false)
 }

@@ -12,10 +12,10 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
 
 app.get('/', (req: any, res: any) => {
-    res.send('hello world')
+    res.send(`hello from port: ${PORT}`)
 })
 
-
+//send data like this: {"email": "your email", "password": "your password" }
 app.post("/login", async (req: any, res: any) => {
     try {
         const { email, password } = req.body
@@ -27,11 +27,20 @@ app.post("/login", async (req: any, res: any) => {
                 }
             }
         )
+        let user = await prisma.user.findFirst(
+            {
+                where: {
+                    email: email,
+
+                    password: password
+                }
+            }
+        )
         if (exists === true) {
-            res.send({ "login": true })
+            res.send({ "login": true, "userdata": user })
         }
         else {
-            res.send({ "login": false })
+            res.send({ "login": false, "userdata": user })
         }
     } catch (error: any) {
         console.log(error.message)
@@ -42,7 +51,6 @@ app.post("/login", async (req: any, res: any) => {
 })
 
 // send data like this: {"email": "your email", "password": "your password" }
-//returns either 
 app.post("/signup", async (req: any, res: any) => {
     try {
         const { email, password } = req.body
@@ -57,6 +65,7 @@ app.post("/signup", async (req: any, res: any) => {
             res.send({ "newuser": { email }, "successful": false, "message": "account with email alredy exists" })
             return
         }
+
         const user = await prisma.user.create({
 
             data: {
@@ -65,16 +74,83 @@ app.post("/signup", async (req: any, res: any) => {
 
                 password: password,
 
+                date: Math.round(Date.now() / 1000)//unix timestamp (seconds)
+
             },
 
         })
-        res.json({ "newuser": { email }, "successful": true, "message": "new account created" })
+        let newuser = await prisma.user.findFirst(
+            {
+                where: {
+                    email: email,
 
-        //const users = await prisma.user.findMany()
-        //res.json(users)
+                    password: password
+                }
+            }
+        )
+        res.json({ "newuser": { newuser }, "successful": true, "message": "new account created" })
     } catch (error) {
         res.status(500).json({
-            message: "Something went wrong",
+            message: `error(${error})`,
         })
     }
+})
+//send data like this {"id": 1}
+app.post("/getuserbyid", async (req: any, res: any) => {
+    try {
+        const id = req.body
+        console.log(id)
+        const user = await prisma.user.findFirst(
+            {
+                where: {
+                    id: id.id
+                }
+            }
+        )
+        res.json(user)
+    } catch (error) {
+        res.send(error)
+    }
+
+})
+app.post("/addbalance", async (req: any, res: any) => {
+    const addbalance = req.body.balance
+    const addid = req.body.id
+    const user = await prisma.user.findFirst(
+        {
+            where: {
+                id: addid
+            }
+        }
+    )
+    const initbalance = user
+    const data = await prisma.user.update({
+        where: {
+            id: addid
+        },
+        data: {
+            //?
+        }
+    })
+
+})
+
+app.post("/withdraw", async (req: any, res: any) => {
+})
+
+//works but prisma says error
+app.get("/leaderboards", async (req: any, res: any) => {
+    const users = await prisma.user.findMany({
+        orderBy: [
+            {
+                donated: 'desc',
+            },
+        ],
+    })
+    res.send(users)
+})
+
+app.get("/allusers", async (req: any, res: any) => {
+    const users = await prisma.user.findMany()
+    res.send(users)
 })

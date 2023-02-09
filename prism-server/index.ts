@@ -283,6 +283,7 @@ app.post("/edituser", async (req: any, res: any) => {
                     email: email
                 }
             })
+            res.send(newemail)
         }
         if (req.hasOwnProperty('password')) {
             password = req.password
@@ -293,6 +294,7 @@ app.post("/edituser", async (req: any, res: any) => {
                     password: password
                 }
             })
+            res.send(newpassword)
         }
         if (req.hasOwnProperty('username')) {
             username = req.username
@@ -303,6 +305,7 @@ app.post("/edituser", async (req: any, res: any) => {
                     username: username
                 }
             })
+            res.send(newusername)
         }
         if (req.hasOwnProperty('imagelink')) {
             imagelink = req.imagelink
@@ -313,6 +316,7 @@ app.post("/edituser", async (req: any, res: any) => {
                     imagelink: imagelink
                 }
             })
+            res.send(newimagelink)
         }
 
     } catch (e) {

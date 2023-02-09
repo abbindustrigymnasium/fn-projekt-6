@@ -42,11 +42,8 @@ app.post("/login", async (req: any, res: any) => {
         else {
             res.send({ "login": false, "userdata": user })
         }
-    } catch (error: any) {
-        console.log(error.message)
-        res.status(500).json({
-            message: "Internal Server Error",
-        })
+    } catch (e) {
+        res.json({ "success": false, "error": e })
     }
 })
 
@@ -89,10 +86,8 @@ app.post("/signup", async (req: any, res: any) => {
             }
         )
         res.json({ "newuser": { newuser }, "successful": true, "message": "new account created" })
-    } catch (error) {
-        res.status(500).json({
-            message: `error(${error})`,
-        })
+    } catch (e) {
+        res.json({ "success": false, "error": e })
     }
 })
 //send data like this {"id": 1}
@@ -108,8 +103,8 @@ app.post("/getuserbyid", async (req: any, res: any) => {
             }
         )
         res.json(user)
-    } catch (error) {
-        res.send(error)
+    } catch (e) {
+        res.json({ "success": false, "error": e })
     }
 
 })
@@ -211,7 +206,7 @@ app.post("/changebalance", async (req: any, res: any) => {
             )
         }
     } catch (e) {
-        res.send(e)
+        res.json({ "success": false, "error": e })
     }
 
 })
@@ -223,32 +218,106 @@ app.get("/paymentlog", async (req: any, res: any) => {
     res.json(payments)
 })
 app.get("/leaderboarddonate", async (req: any, res: any) => {
-    const users = await prisma.user.findMany({
-        orderBy: [
-            {
-                donated: 'desc',
-            },
-        ],
-    })
-    res.send(users)
+    try {
+        const users = await prisma.user.findMany({
+            orderBy: [
+                {
+                    donated: 'desc',
+                },
+            ],
+        })
+        res.send(users)
+    }
+    catch (e) {
+        res.json({ "success": false, "error": e })
+    }
 })
 app.get("/leaderboardwon", async (req: any, res: any) => {
-    const users = await prisma.user.findMany({
-        orderBy: [
-            {
-                won: 'desc',
-            },
-        ],
-    })
-    res.send(users)
+    try {
+        const users = await prisma.user.findMany({
+            orderBy: [
+                {
+                    won: 'desc',
+                },
+            ],
+        })
+        res.send(users)
+    }
+    catch (e) {
+        res.json({ "success": false, "error": e })
+    }
 })
 app.get("/leaderboardbalance", async (req: any, res: any) => {
-    const users = await prisma.user.findMany({
-        orderBy: [
-            {
-                balance: 'desc',
-            },
-        ],
-    })
-    res.send(users)
+    try {
+        const users = await prisma.user.findMany({
+            orderBy: [
+                {
+                    balance: 'desc',
+                },
+            ],
+        })
+        res.send(users)
+    } catch (e) {
+        res.json({ "success": false, "error": e })
+    }
+})
+
+//{"id":"id", email:"email", "password":"password", "username":"username", "imagelink":"imagelink"}
+app.post("/edituser", async (req: any, res: any) => {
+    try {
+        let id
+        let email
+        let password
+        let username
+        let imagelink
+        if (req.hasOwnProperty('id')) {
+            id = req.id
+            res.json({ "message": "you have to send an id in the request" })
+        }
+        if (req.hasOwnProperty('email')) {
+            email = req.email
+            const newemail = await prisma.user.update({
+                where: {
+                    id: id
+                }, data: {
+                    email: email
+                }
+            })
+        }
+        if (req.hasOwnProperty('password')) {
+            password = req.password
+            const newpassword = await prisma.user.update({
+                where: {
+                    id: id
+                }, data: {
+                    password: password
+                }
+            })
+        }
+        if (req.hasOwnProperty('username')) {
+            username = req.username
+            const newusername = await prisma.user.update({
+                where: {
+                    id: id
+                }, data: {
+                    username: username
+                }
+            })
+        }
+        if (req.hasOwnProperty('imagelink')) {
+            imagelink = req.imagelink
+            const newimagelink = await prisma.user.update({
+                where: {
+                    id: id
+                }, data: {
+                    imagelink: imagelink
+                }
+            })
+        }
+
+    } catch (e) {
+        res.json({ "success": false, "error": e })
+    }
+
+
 })

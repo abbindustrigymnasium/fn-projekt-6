@@ -113,29 +113,37 @@ app.post("/getuserbyid", async (req: any, res: any) => {
     }
 
 })
-app.post("/addbalance", async (req: any, res: any) => {
-    const addbalance = req.body.balance
-    const addid = req.body.id
-    const user = await prisma.user.findFirst(
-        {
+app.post("/changebalance", async (req: any, res: any) => {
+    try {
+        const addbalance = req.body.balance
+        const addid = req.body.id
+        const user = await prisma.user.findFirst(
+            {
+                where: {
+                    id: addid
+                }
+            }
+        )
+        const initbalance = user?.balance
+        const sendbalance = (initbalance + addbalance)
+        const data = await prisma.user.update({
+            where: {
+                id: addid
+            },
+            data: {
+                balance: sendbalance
+            }
+        })
+        const currentbal = await prisma.user.findFirst({
             where: {
                 id: addid
             }
-        }
-    )
-    const initbalance = user
-    const data = await prisma.user.update({
-        where: {
-            id: addid
-        },
-        data: {
-            //?
-        }
-    })
+        })
+        res.json({ "success": true, "currentbal": currentbal?.balance })
+    } catch (e) {
+        res.send(e)
+    }
 
-})
-
-app.post("/withdraw", async (req: any, res: any) => {
 })
 
 //works but prisma says error
@@ -143,7 +151,7 @@ app.get("/leaderboards", async (req: any, res: any) => {
     const users = await prisma.user.findMany({
         orderBy: [
             {
-                donated: 'desc',
+                balance: 'desc',
             },
         ],
     })

@@ -14,12 +14,8 @@
                          clip-rule="evenodd" />
                  </svg>
                  <input class="bg-gray-900 text-gray-200 outline-none ml-1 block " type="text" name="" id="" placeholder="search...">
-           </div>
-                 <!-- <div class="lg:ml-40 ml-10 space-x-8">
-                     <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">New Report</button>
-                     <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">Create</button>
-                 </div> -->
-             </div>
+            </div>
+            </div>
          </div>
          <div>
              <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -50,7 +46,7 @@
                              </tr>
                          </thead>
                          <tbody>
-                         <UserPreview></UserPreview>
+                        <UserPreview v-for="user in allusers" :key=user.id v-bind:user="user"></UserPreview>
                          </tbody>
                      </table>
                      <div
@@ -75,3 +71,19 @@
          </div>
      </div>
  </template>
+
+<script setup>
+
+import axios from 'axios'; const endpoint = 'http://localhost:3000'; 
+let allusers=[]
+
+try {
+    const response = await axios.get(`${endpoint}/allusers`);
+    allusers = response.data;
+    console.log(allusers)
+
+} catch (error) {
+    console.error(error);
+}
+
+</script>

@@ -288,29 +288,7 @@ app.get("/leaderboardwon", async (req: any, res: any) => {
         res.json({ "success": false, "error": e })
     }
 })
-app.get("/leaderboardbalance", async (req: any, res: any) => {
-    try {
-        const users = await prisma.user.findMany({
-            select: {
-                username: true,
-                email: true,
-                donated: true,
-                suspended: true,
-                won: true,
-                date: true,
-                imagelink: true,
-            },
-            orderBy: [
-                {
-                    balance: 'desc',
-                },
-            ],
-        })
-        res.json({ "users": users })
-    } catch (e) {
-        res.json({ "success": false, "error": e })
-    }
-})
+
 
 //{"id":id, email:"email", "password":"password", "username":"username", "imagelink":"imagelink", "online": true, "suspended": true}
 //you don't need to send all the data so for example if you only want to change "suspended", then you send data like this {"id": id, "suspended": false}

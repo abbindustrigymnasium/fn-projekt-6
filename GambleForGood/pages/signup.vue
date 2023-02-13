@@ -66,7 +66,7 @@
 
 
 import { computed, ref } from "vue";
-import axios from 'axios'; const endpoint = 'http://localhost:3000'; 
+import axios from 'axios'; const endpoint = 'http://localhost:3001'; 
 
 definePageMeta({
   layout: "empty",

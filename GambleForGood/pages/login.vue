@@ -59,16 +59,17 @@ definePageMeta({
 });
 
 
-import axios from 'axios'; const endpoint = 'http://localhost:3000'; async function getData() {
-  try {
+import axios from 'axios'; const endpoint = 'http://localhost:3001'; 
+// async function getData() {
+//   try {
 
-    const response = await axios.get(`${endpoint}/allusers`);
-    const data = response.data;
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-} getData();
+//     const response = await axios.get(`${endpoint}/allusers`);
+//     const data = response.data;
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// } getData();
 
 </script>
 

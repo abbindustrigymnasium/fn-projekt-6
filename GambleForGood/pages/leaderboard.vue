@@ -111,10 +111,10 @@
 
 
 <script setup>
-import axios from 'axios'; const endpoint = 'http://localhost:3000'; 
+import axios from 'axios'; const endpoint = 'http://localhost:3001'; 
 let allusers=[]
 try {
-    const response = await axios.get(`${endpoint}/allusers`);
+    const response = await axios.get(`${endpoint}/leaderboarddonate`);
     allusers = response.data;
     console.log(allusers)
 } catch (error) {

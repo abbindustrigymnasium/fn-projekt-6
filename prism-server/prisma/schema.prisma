@@ -17,7 +17,7 @@ model User {
 
   password String?
 
-  name String? @default("name")
+  username String? @default("username")
 
   balance Int @default(0)
 
@@ -28,6 +28,18 @@ model User {
   date Float //@default(1675769363) //unix timestamp
 
   suspended Boolean @default(false)
+
+  online Boolean
+
+  imagelink String @default("https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg")
+}
+
+model Payment {
+  paymentid Int @id @default(autoincrement())
+
+  paymentammount Int
+
+  userid Int
 }
 
 //model organisations {

@@ -104,7 +104,7 @@
                      <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-02.png">     
                
                <h4 class="font-semibold text-xl text-dark mb-2">
-                  Goal 2: Zero hunger
+                  Goal 2: Zero Hunger
                </h4>
                <p class="text-body-color mb-2">
                 End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
@@ -142,7 +142,7 @@
                      <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/04/E_SDG-goals_icons-individual-rgb-03.png">
                
                <h4 class="font-semibold text-xl text-dark mb-2">
-                  Goal 3: Good health and well-being
+                  Goal 3: Good Health and Well-being
                </h4>
                <p class="text-body-color mb-2">
                 Ensure healthy lives and promote well-being for all at all ages.
@@ -179,7 +179,7 @@
             </div>
                <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/04/E_SDG-goals_icons-individual-rgb-04.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 4: Quality education
+                Goal 4: Quality Education
                </h4>
                <p class="text-body-color mb-2">
                 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
@@ -253,7 +253,7 @@
             </div>
                <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 6: Clean water and sanitaion
+                Goal 6: Clean Water and Sanitaion
                </h4>
                <p class="text-body-color mb-2">
                 Ensure availability and sustainable management of water and sanitation for all.
@@ -275,7 +275,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition7">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -292,10 +292,13 @@
             </div>
                <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-07.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 7: Clean water and sanitaion
+                Goal 7: Affordable and Clean Energy
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                Our current reliance on fossil fuels is 
+                unsustainable and harmful to the planet, 
+                which is why we have to change the way we 
+                produce and consume energy.
                </p>
             </div>
          </div>
@@ -312,7 +315,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition8">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -327,12 +330,14 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-08.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 8: Clean water and sanitaion
+                Goal 8: Decent Work and Economic Growth
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+               By putting a stop to modern slavery and child labor 
+               we can make sure that everybody gets the benefits of 
+               entrepreneurship and innovation.
                </p>
             </div>
          </div>
@@ -349,7 +354,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition9">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -364,12 +369,13 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-09.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 9: Clean water and sanitaion
+                Goal 9: Industry, Innovation and Infrastructure
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                Build resilent infrastructure, promote inclusive 
+                and sustainable industrialization and foster innovation.
                </p>
             </div>
          </div>
@@ -386,7 +392,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition10">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -401,12 +407,14 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-10.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 10: Clean water and sanitaion
+                Goal 10: Reduced Inequalities
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+               Equality and prosperity must be available to everyone – 
+               regardless of gender, race, religious beliefs or economic 
+               status.
                </p>
             </div>
          </div>
@@ -423,7 +431,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition11">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -438,12 +446,14 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-11.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 11: Clean water and sanitaion
+                Goal 11: Sustainable Cities and Communities
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                We need new and intellegent urban planning 
+                to create safe and resilient cities with 
+                culturally inspiring conditions.
                </p>
             </div>
          </div>
@@ -460,7 +470,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition12">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -475,12 +485,14 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-12.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 12: Clean water and sanitaion
+                Goal 12: Responsible Consumption and Production
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                We consume far more than our planet can provide. 
+                We need to use and produce sustainably to 
+                reverse the harm we caused.
                </p>
             </div>
          </div>
@@ -497,7 +509,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition13">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -512,12 +524,14 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-13.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 13: Clean water and sanitaion
+                Goal 13: Climate Action
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                Climate change is a real threat to 
+                our civilization. The effects are already 
+                visible and will be catastrophic unless we act now.
                </p>
             </div>
          </div>
@@ -534,7 +548,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition14">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -549,12 +563,15 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-14.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 14: Clean water and sanitaion
+                Goal 14: Life Below Water
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                Oceans cover 70% of our planet and we 
+                rely on them for food, energy and water. 
+                Yet, we have managed to do tremendous damage 
+                to these precious resources.
                </p>
             </div>
          </div>
@@ -571,7 +588,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition15">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -586,12 +603,16 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-15.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 15: Clean water and sanitaion
+                Goal 15: Life on Land
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                We are all part of the planet's 
+                ecosystem. Promoting a sustainable 
+                use of our ecosystems and preserving 
+                biodiversity is not a cause. It is 
+                the key to our survival.
                </p>
             </div>
          </div>
@@ -608,7 +629,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition16">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -623,12 +644,18 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-16.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 16: Clean water and sanitaion
+                Goal 16: Peace, Justice and Strong Institutions
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                Persecution, injustice and abuse
+                runs rampant. It is tearing the 
+                very fabric of civilization. 
+                We need to have strong 
+                institutions, global standards 
+                of justice, and commitment 
+                to peace everywhere.
                </p>
             </div>
          </div>
@@ -645,7 +672,7 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition17">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
@@ -660,12 +687,16 @@
                 </div>
 
             </div>
-               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-06.png">
+               <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-17.png">
                <h4 class="font-semibold text-xl text-dark mb-2">
-                Goal 17: Clean water and sanitaion
+                Goal 17: Partnerships for the Goals
                </h4>
                <p class="text-body-color mb-2">
-                Ensure availability and sustainable management of water and sanitation for all.
+                The global goals can only be 
+                met if we work together.
+                To build a better world, 
+                we need to be supportive, empathetic, 
+                inventive, passionate, and cooperative.
                </p>
             </div>
          </div>
@@ -678,18 +709,14 @@
 </template>
 
 <script>
-import fncomponent from '~/components/fncomponent.vue'
-  
+
 export default {
   components: {
-    fncomponent
+    
   },
   data() {
     return{
-      Title1:'Goal 1: No Poverty',
-      Desc1:'End poverty, everywhere in all it`s forms. Together we can help people live productive and rich lives',
-      image1:'https://www.umu.se/globalassets/qbank/theglobalgoals_icons_color_goal_1-14300crop0020002000resize600600autoorientquality90density150stripextensionjpgid26.jpg?width=1280'
-    }
+      }
   }
 }
 </script>
@@ -741,6 +768,84 @@ export default {
    top: 882px;
    margin: 10px;
 }
+#CheckmarkPosition7 {
+   position: absolute;
+   float: right;
+   left: 347px;
+   top: 1418px;
+   margin: 10px;
+}
+#CheckmarkPosition8 {
+   position: absolute;
+   float: right;
+   left: 767px;
+   top: 1418px;
+   margin: 10px;
+}
+#CheckmarkPosition9 {
+   position: absolute;
+   float: right;
+   right: -10px;
+   top: 1418px;
+   margin: 10px;
+}
+#CheckmarkPosition10 {
+   position: absolute;
+   float: right;
+   left: 347px;
+   top: 2007px;
+   margin: 10px;
+}
+#CheckmarkPosition11 {
+   position: absolute;
+   float: right;
+   left: 767px;
+   top: 2007px;
+   margin: 10px;
+}
+#CheckmarkPosition12 {
+   position: absolute;
+   float: right;
+   right: -10px;
+   top: 2007px;
+   margin: 10px;
+}
+#CheckmarkPosition13 {
+   position: absolute;
+   float: right;
+   left: 347px;
+   top: 2572px;
+   margin: 10px;
+}
+#CheckmarkPosition14 {
+   position: absolute;
+   float: right;
+   left: 767px;
+   top: 2572px;
+   margin: 10px;
+}
+#CheckmarkPosition15 {
+   position: absolute;
+   float: right;
+   right: -10px;
+   top: 2572px;
+   margin: 10px;
+}
+#CheckmarkPosition16 {
+   position: absolute;
+   float: right;
+   left: 347px;
+   top: 3133px;
+   margin: 10px;
+}
+#CheckmarkPosition17 {
+   position: absolute;
+   float: right;
+   left: 767px;
+   top: 3133px;
+   margin: 10px;
+}
+
 
 .label__checkbox {
 	 display: none;

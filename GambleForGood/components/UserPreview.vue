@@ -10,23 +10,23 @@
                     <div class="ml-3 cursor-pointer ">
                         <a href="/randomprofile">
                         <p class="text-white whitespace-no-wrap">
-                            Vera Carpenter
+                            {{ user.email }}
                         </p>
                         </a>
                     </div>
                 </div>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
-            <p class="text-gray-200 whitespace-no-wrap">11000$</p>
+            <p class="text-gray-200 whitespace-no-wrap">{{ user.donated }}$</p>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
             <p class="text-gray-200 whitespace-no-wrap">
-                20$
+                {{ user.won }}$
             </p>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
             <p class="text-gray-200 whitespace-no-wrap">
-                Jan 21, 2020
+                {{ Date(user.date*1000) }}
             </p>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
@@ -34,8 +34,19 @@
                 class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                 <span aria-hidden
                     class="absolute inset-0 bg-green-200 rounded-full"></span>
-            <span class="relative">Active</span>
+            <span class="relative">{{ user.suspended ? "suspended":"active"}}</span>
             </span>
         </td>
     </tr>
 </template>
+
+<script>
+export default {
+  props: {
+    user: {
+              type: Object,
+              default: () => {}
+            }
+  }
+}
+</script>

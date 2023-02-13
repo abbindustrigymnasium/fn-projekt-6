@@ -17,16 +17,16 @@
                 </div>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
-            <p class="text-gray-200 whitespace-no-wrap">{{ user.donated }}</p>
+            <p class="text-gray-200 whitespace-no-wrap">{{ user.donated }}$</p>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
             <p class="text-gray-200 whitespace-no-wrap">
-                {{ user.won }}
+                {{ user.won }}$
             </p>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
             <p class="text-gray-200 whitespace-no-wrap">
-                {{ user.date }}
+                {{ Date(user.date*1000) }}
             </p>
         </td>
         <td class="px-5 py-5 border-b border-gray-600 bg-gray-800 text-sm">
@@ -34,7 +34,7 @@
                 class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                 <span aria-hidden
                     class="absolute inset-0 bg-green-200 rounded-full"></span>
-            <span class="relative">{{ user.suspended }}</span>
+            <span class="relative">{{ user.suspended ? "suspended":"active"}}</span>
             </span>
         </td>
     </tr>

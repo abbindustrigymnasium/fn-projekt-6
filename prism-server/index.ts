@@ -242,14 +242,23 @@ app.get("/paymentlog", async (req: any, res: any) => {
 })
 app.get("/leaderboarddonate", async (req: any, res: any) => {
     try {
-        const users = await prisma.user.findMany({
+        const users = await prisma.user.findMany({//donated createdat donated won username
+            select: {
+                username: true,
+                email: true,
+                donated: true,
+                suspended: true,
+                won: true,
+                date: true,
+                imagelink: true,
+            },
             orderBy: [
                 {
                     donated: 'desc',
                 },
             ],
         })
-        res.send(users)
+        res.json({ "users": users })
     }
     catch (e) {
         res.json({ "success": false, "error": e })
@@ -258,13 +267,22 @@ app.get("/leaderboarddonate", async (req: any, res: any) => {
 app.get("/leaderboardwon", async (req: any, res: any) => {
     try {
         const users = await prisma.user.findMany({
+            select: {
+                username: true,
+                email: true,
+                donated: true,
+                suspended: true,
+                won: true,
+                date: true,
+                imagelink: true,
+            },
             orderBy: [
                 {
                     won: 'desc',
                 },
             ],
         })
-        res.send(users)
+        res.json({ "users": users })
     }
     catch (e) {
         res.json({ "success": false, "error": e })
@@ -273,13 +291,22 @@ app.get("/leaderboardwon", async (req: any, res: any) => {
 app.get("/leaderboardbalance", async (req: any, res: any) => {
     try {
         const users = await prisma.user.findMany({
+            select: {
+                username: true,
+                email: true,
+                donated: true,
+                suspended: true,
+                won: true,
+                date: true,
+                imagelink: true,
+            },
             orderBy: [
                 {
                     balance: 'desc',
                 },
             ],
         })
-        res.send(users)
+        res.json({ "users": users })
     } catch (e) {
         res.json({ "success": false, "error": e })
     }

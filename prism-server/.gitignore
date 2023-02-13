@@ -1,3 +1,4 @@
 node_modules
 # Keep environment variables out of version control
 .env
+nuxtgamble\fn-projekt-6\prism-server\prisma\migrations

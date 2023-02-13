@@ -18,29 +18,35 @@ app.get('/', (req: any, res: any) => {
 //send data like this: {"email": "your email", "password": "your password" }
 app.post("/login", async (req: any, res: any) => {
     try {
-        const { email, password } = req.body
-        const exists = !!await prisma.user.findFirst(
-            {
-                where: {
-                    email: email,
-                    password: password
+        const reqbody = req.body
+        if (reqbody.hasOwnProperty('email') || reqbody.hasOwnProperty('password')) {
+            const email = reqbody.email
+            const password = reqbody.password
+            const exists = !!await prisma.user.findFirst(
+                {
+                    where: {
+                        email: email,
+                        password: password
+                    }
                 }
-            }
-        )
-        let user = await prisma.user.findFirst(
-            {
-                where: {
-                    email: email,
+            )
+            let user = await prisma.user.findFirst(
+                {
+                    where: {
+                        email: email,
 
-                    password: password
+                        password: password
+                    }
                 }
+            )
+            if (exists === true) {
+                res.send({ "login": true, "userdata": user })
             }
-        )
-        if (exists === true) {
-            res.send({ "login": true, "userdata": user })
-        }
-        else {
-            res.send({ "login": false, "userdata": user })
+            else {
+                res.send({ "login": false, "message": "User doesn't exist, try again or sign up" })
+            }
+        } else {
+            res.json({ "login": false, "message": `invalid request (${reqbody})` })
         }
     } catch (e) {
         res.json({ "success": false, "error": e })
@@ -50,44 +56,50 @@ app.post("/login", async (req: any, res: any) => {
 // send data like this: {"email": "your email", "password": "your password" }
 app.post("/signup", async (req: any, res: any) => {
     try {
-        const { email, password } = req.body
-        const exists = !!await prisma.user.findFirst(
-            {
-                where: {
-                    email: email,
+        const reqbody = req.body
+        if (reqbody.hasOwnProperty('email') || reqbody.hasOwnProperty('password')) {
+            const email = reqbody.email
+            const password = reqbody.password
+            const exists = !!await prisma.user.findFirst(
+                {
+                    where: {
+                        email: email,
+                    }
                 }
+            )
+            if (exists === true) {
+                res.send({ "newuser": { email }, "successful": false, "message": "account with email alredy exists" })
+                return
             }
-        )
-        if (exists === true) {
-            res.send({ "newuser": { email }, "successful": false, "message": "account with email alredy exists" })
-            return
+
+            const user = await prisma.user.create({
+
+                data: {
+
+                    email: email,
+
+                    password: password,
+
+                    date: Math.round(Date.now() / 1000),//unix timestamp (seconds)
+
+                    online: true
+
+                },
+
+            })
+            let newuser = await prisma.user.findFirst(
+                {
+                    where: {
+                        email: email,
+
+                        password: password
+                    }
+                }
+            )
+            res.json({ "successful": true, "newuser": { newuser }, "message": "new account created" })
+        } else {
+            res.json({ "successful": false, "message": `reques (${reqbody}) does not match the keys "password" and "email` })
         }
-
-        const user = await prisma.user.create({
-
-            data: {
-
-                email: email,
-
-                password: password,
-
-                date: Math.round(Date.now() / 1000),//unix timestamp (seconds)
-
-                online: true
-
-            },
-
-        })
-        let newuser = await prisma.user.findFirst(
-            {
-                where: {
-                    email: email,
-
-                    password: password
-                }
-            }
-        )
-        res.json({ "newuser": { newuser }, "successful": true, "message": "new account created" })
     } catch (e) {
         res.json({ "success": false, "error": e })
     }
@@ -95,16 +107,20 @@ app.post("/signup", async (req: any, res: any) => {
 //send data like this {"id": 1}
 app.post("/getuserbyid", async (req: any, res: any) => {
     try {
-        const id = req.body
-        console.log(id)
-        const user = await prisma.user.findFirst(
-            {
-                where: {
-                    id: id.id
+        const reqbody = req.body
+        if (reqbody.hasOwnProperty("id")) {
+            const id = req.body
+            const user = await prisma.user.findFirst(
+                {
+                    where: {
+                        id: id.id
+                    }
                 }
-            }
-        )
-        res.json(user)
+            )
+            res.json({ "success": true, "userinfo": user })
+        } else {
+            res.json({ "success": false, "message": `request (${reqbody}) does not contain "id" key` })
+        }
     } catch (e) {
         res.json({ "success": false, "error": e })
     }
@@ -114,20 +130,62 @@ app.post("/getuserbyid", async (req: any, res: any) => {
 //send request like this{"id": 8, "balance": -1439082} positive to add and negative to remove
 app.post("/changebalance", async (req: any, res: any) => {
     try {
-        var addbalance = req.body.balance// to make it accesseble in whole post as vars are accesseble one level higher than they are defined
-        const addid = req.body.id
-        const user = await prisma.user.findFirst(
-            {
-                where: {
-                    id: addid
+        const reqbody = req.body
+        if (reqbody.hasOwnProperty("balance") || reqbody.hasOwnProperty("id")) {
+            const addbalance = reqbody.balance
+            const addid = reqbody.id
+            const user = await prisma.user.findFirst(
+                {
+                    where: {
+                        id: addid
+                    }
                 }
-            }
-        )
-        const initbalance = user?.balance
-        const sendbalance = (initbalance + addbalance)
-        if (addbalance < 0) {
-            if (sendbalance < 0) {
-                res.json({ "message": "not enough money", "success": false })
+            )
+            const initbalance = user?.balance
+            const sendbalance = (initbalance + addbalance)
+            if (addbalance < 0) {
+                if (sendbalance < 0) {
+                    res.json({ "message": "not enough money", "success": false })
+                } else {
+                    const user = await prisma.user.findUnique({
+                        where: {
+                            id: addid
+                        }
+                    })
+                    const initwonbal = user?.won
+                    const newwonlostbal = initwonbal + addbalance
+                    const editwonbal = await prisma.user.update({
+                        where: {
+                            id: addid
+                        },
+                        data: {
+                            donated: newwonlostbal
+                        }
+                    })
+                    const data = await prisma.user.update({
+                        where: {
+                            id: addid
+                        },
+                        data: {
+                            balance: sendbalance
+                        }
+                    })
+                    const currentbal = await prisma.user.findFirst({
+                        where: {
+                            id: addid
+                        }
+                    })
+                    res.json({ "success": true, "currentbal": currentbal?.balance })
+                    const logpayment = await prisma.payment.create(
+                        {
+                            data: {
+                                paymentammount: addbalance,
+                                userid: addid
+                            }
+                        }
+                    )
+                }
+
             } else {
                 const user = await prisma.user.findUnique({
                     where: {
@@ -141,7 +199,7 @@ app.post("/changebalance", async (req: any, res: any) => {
                         id: addid
                     },
                     data: {
-                        donated: newwonlostbal
+                        won: newwonlostbal
                     }
                 })
                 const data = await prisma.user.update({
@@ -167,46 +225,10 @@ app.post("/changebalance", async (req: any, res: any) => {
                     }
                 )
             }
-
         } else {
-            const user = await prisma.user.findUnique({
-                where: {
-                    id: addid
-                }
-            })
-            const initwonbal = user?.won
-            const newwonlostbal = initwonbal + addbalance
-            const editwonbal = await prisma.user.update({
-                where: {
-                    id: addid
-                },
-                data: {
-                    won: newwonlostbal
-                }
-            })
-            const data = await prisma.user.update({
-                where: {
-                    id: addid
-                },
-                data: {
-                    balance: sendbalance
-                }
-            })
-            const currentbal = await prisma.user.findFirst({
-                where: {
-                    id: addid
-                }
-            })
-            res.json({ "success": true, "currentbal": currentbal?.balance })
-            const logpayment = await prisma.payment.create(
-                {
-                    data: {
-                        paymentammount: addbalance,
-                        userid: addid
-                    }
-                }
-            )
+            res.json({ "success": false, "message": `request (${reqbody}) does not contain the keys "id" and "balance"` })
         }
+
     } catch (e) {
         res.json({ "success": false, "error": e })
     }
@@ -346,10 +368,12 @@ app.post("/edituser", async (req: any, res: any) => {
                 changelist.push({ "suspended": suspended })
             }
             if (changelist.length > 0) {
-                res.json({ "success": true, "changes": changelist, "message": `changed ${changelist.length} objects in the database` })
+                res.json({ "success": true, "changes": changelist, "message": `changed ${changelist.length} object(s) in the database` })
+            } else {
+                res.json({ "success": false, "message": `request (${reqbody}) does not contain any of the keys (email, password, online, suspended, imagelink, username)` })
             }
         } else {
-            res.json({ "success": false, "error": "none", "message": "invalid request" })
+            res.json({ "success": false, "message": `request (${reqbody}) does not contain the key "id"` })
         }
 
     } catch (e) {

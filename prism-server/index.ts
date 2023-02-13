@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 app.use(cors())
 app.use(express.json())
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
 
@@ -71,7 +71,9 @@ app.post("/signup", async (req: any, res: any) => {
 
                 password: password,
 
-                date: Math.round(Date.now() / 1000)//unix timestamp (seconds)
+                date: Math.round(Date.now() / 1000),//unix timestamp (seconds)
+
+                online: true
 
             },
 
@@ -125,7 +127,7 @@ app.post("/changebalance", async (req: any, res: any) => {
         const sendbalance = (initbalance + addbalance)
         if (addbalance < 0) {
             if (sendbalance < 0) {
-                res.json({ "message": "not enough money" })
+                res.json({ "message": "not enough money", "success": false })
             } else {
                 const user = await prisma.user.findUnique({
                     where: {
@@ -213,7 +215,6 @@ app.post("/changebalance", async (req: any, res: any) => {
 
 app.get("/paymentlog", async (req: any, res: any) => {
     const payments = await prisma.payment.findMany({
-
     })
     res.json(payments)
 })
@@ -262,61 +263,93 @@ app.get("/leaderboardbalance", async (req: any, res: any) => {
     }
 })
 
-//{"id":"id", email:"email", "password":"password", "username":"username", "imagelink":"imagelink"}
+//{"id":id, email:"email", "password":"password", "username":"username", "imagelink":"imagelink", "online": true, "suspended": true}
+//you don't need to send all the data so for example if you only want to change "suspended", then you send data like this {"id": id, "suspended": false}
 app.post("/edituser", async (req: any, res: any) => {
     try {
+        let changelist = []
+        let resdata = {}
         let id
         let email
         let password
         let username
         let imagelink
-        if (req.hasOwnProperty('id')) {
-            id = req.id
-            res.json({ "message": "you have to send an id in the request" })
-        }
-        if (req.hasOwnProperty('email')) {
-            email = req.email
-            const newemail = await prisma.user.update({
-                where: {
-                    id: id
-                }, data: {
-                    email: email
-                }
-            })
-            res.send(newemail)
-        }
-        if (req.hasOwnProperty('password')) {
-            password = req.password
-            const newpassword = await prisma.user.update({
-                where: {
-                    id: id
-                }, data: {
-                    password: password
-                }
-            })
-            res.send(newpassword)
-        }
-        if (req.hasOwnProperty('username')) {
-            username = req.username
-            const newusername = await prisma.user.update({
-                where: {
-                    id: id
-                }, data: {
-                    username: username
-                }
-            })
-            res.send(newusername)
-        }
-        if (req.hasOwnProperty('imagelink')) {
-            imagelink = req.imagelink
-            const newimagelink = await prisma.user.update({
-                where: {
-                    id: id
-                }, data: {
-                    imagelink: imagelink
-                }
-            })
-            res.send(newimagelink)
+        let suspended
+        let onlinestatus
+        let reqbody = req.body
+        if (reqbody.hasOwnProperty('id')) {
+            id = reqbody.id
+            if (reqbody.hasOwnProperty('email')) {
+                email = reqbody.email
+                const newemail = await prisma.user.update({
+                    where: {
+                        id: id
+                    }, data: {
+                        email: email
+                    }
+                })
+                changelist.push({ "email": email })
+            }
+            if (reqbody.hasOwnProperty('password')) {
+                password = reqbody.password
+                const newpassword = await prisma.user.update({
+                    where: {
+                        id: id
+                    }, data: {
+                        password: password
+                    }
+                })
+                changelist.push({ "password": password })
+            }
+            if (reqbody.hasOwnProperty('username')) {
+                username = reqbody.username
+                const newusername = await prisma.user.update({
+                    where: {
+                        id: id
+                    }, data: {
+                        username: username
+                    }
+                })
+                changelist.push({ "username": username })
+            }
+            if (reqbody.hasOwnProperty('imagelink')) {
+                imagelink = reqbody.imagelink
+                const newimagelink = await prisma.user.update({
+                    where: {
+                        id: id
+                    }, data: {
+                        imagelink: imagelink
+                    }
+                })
+                changelist.push({ "imagelink": imagelink })
+            }
+            if (reqbody.hasOwnProperty('online')) {
+                onlinestatus = reqbody.online
+                const newonline = await prisma.user.update({
+                    where: {
+                        id: id
+                    }, data: {
+                        online: onlinestatus
+                    }
+                })
+                changelist.push({ "online": onlinestatus })
+            }
+            if (reqbody.hasOwnProperty('suspended')) {
+                suspended = reqbody.suspended
+                const newsuspended = await prisma.user.update({
+                    where: {
+                        id: id
+                    }, data: {
+                        suspended: suspended
+                    }
+                })
+                changelist.push({ "suspended": suspended })
+            }
+            if (changelist.length > 0) {
+                res.json({ "success": true, "changes": changelist, "message": `changed ${changelist.length} objects in the database` })
+            }
+        } else {
+            res.json({ "success": false, "error": "none", "message": "invalid request" })
         }
 
     } catch (e) {

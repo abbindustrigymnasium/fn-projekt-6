@@ -43,12 +43,12 @@
         "
         >
         <div>
-            <div id="CheckmarkPosition">
+            <div id="CheckmarkPosition" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -86,12 +86,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition2">
+               <div id="CheckmarkPosition2" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -124,12 +124,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition3">
+               <div id="CheckmarkPosition3" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -162,12 +162,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition4">
+               <div id="CheckmarkPosition4" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -199,12 +199,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition5">
+               <div id="CheckmarkPosition5" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -236,12 +236,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition6">
+               <div id="CheckmarkPosition6" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -275,12 +275,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition7">
+               <div id="CheckmarkPosition7" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -315,12 +315,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition8">
+               <div id="CheckmarkPosition8" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -354,12 +354,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition9">
+               <div id="CheckmarkPosition9" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -392,12 +392,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition10">
+               <div id="CheckmarkPosition10" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -431,12 +431,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition11">
+               <div id="CheckmarkPosition11" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -470,12 +470,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition12">
+               <div id="CheckmarkPosition12" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -509,12 +509,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition13">
+               <div id="CheckmarkPosition13" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -548,12 +548,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition14">
+               <div id="CheckmarkPosition14" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -588,12 +588,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition15">
+               <div id="CheckmarkPosition15" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -629,12 +629,12 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition16">
+               <div id="CheckmarkPosition16" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
@@ -672,19 +672,19 @@
                mb-8
                "
                >
-               <div id="CheckmarkPosition17">
+               <div id="CheckmarkPosition17" name="progress" value="1" tabIndex="1" @click="ckChange(this)">
                 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <div class="center">
                 <label class="label">
-                <input  class="label__checkbox" type="checkbox" />
+                <input  class="label__checkbox" type="checkbox"/>
                 <span class="label__text">
                 <span class="label__check">
                     <i class="fa fa-check icon"></i>
                 </span>
                 </span>
                 </label>
-                </div>
+               </div>
 
             </div>
                <img class="object-fill h-55 w-96 mt-2 mb-2 rounded-lg" src="https://smartcitysweden.com/wp-content/uploads/2017/10/E_SDG_goals_icons-individual-rgb-17.png">
@@ -708,17 +708,16 @@
 </div>
 </template>
 
-<script>
+<script setup>
 
-export default {
-  components: {
-    
-  },
-  data() {
-    return{
-      }
-  }
+function ckChange(ckType){
+   //  var ckName = document.getElementsByName(ckType.name);
+    var checked = document.getElementById(ckType.id);
+
+    alert("wassaaaaaaa");
 }
+
+
 </script>
 <style scoped>
 #CheckmarkPosition {

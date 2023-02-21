@@ -19,7 +19,7 @@ app.get('/', (req: any, res: any) => {
 app.post("/login", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty('email') || reqbody.hasOwnProperty('password')) {
+        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password')) {
             const email = reqbody.email
             const password = reqbody.password
             const exists = !!await prisma.user.findFirst(
@@ -57,7 +57,7 @@ app.post("/login", async (req: any, res: any) => {
 app.post("/signup", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty('email') || reqbody.hasOwnProperty('password')) {
+        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password')) {
             const email = reqbody.email
             const password = reqbody.password
             const exists = !!await prisma.user.findFirst(
@@ -131,7 +131,7 @@ app.post("/getuserbyid", async (req: any, res: any) => {
 app.post("/changebalance", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty("balance") || reqbody.hasOwnProperty("id")) {
+        if (reqbody.hasOwnProperty("balance") && reqbody.hasOwnProperty("id")) {
             const addbalance = reqbody.balance
             const addid = reqbody.id
             const user = await prisma.user.findFirst(
@@ -295,7 +295,6 @@ app.get("/leaderboardwon", async (req: any, res: any) => {
 app.post("/edituser", async (req: any, res: any) => {
     try {
         let changelist = []
-        let resdata = {}
         let id
         let email
         let password

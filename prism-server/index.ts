@@ -15,13 +15,14 @@ app.get('/', (req: any, res: any) => {
     res.send(`hello from port: ${PORT}`)
 })
 
-//send data like this: {"email": "your email", "password": "your password" }
+//send data like this: {"email": "your email", "password": "your password", "username":"your username" }
 app.post("/login", async (req: any, res: any) => {
     try {
         const reqbody = req.body
         if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password')) {
             const email = reqbody.email
             const password = reqbody.password
+            const username = reqbody.username
             const exists = !!await prisma.user.findFirst(
                 {
                     where: {
@@ -102,9 +103,10 @@ app.post("/signout", async (req: any, res: any) => {
 app.post("/signup", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password')) {
+        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password') && reqbody.hasOwnProperty('username')) {
             const email = reqbody.email
             const password = reqbody.password
+            const username = reqbody.username
             const exists = !!await prisma.user.findFirst(
                 {
                     where: {
@@ -124,6 +126,8 @@ app.post("/signup", async (req: any, res: any) => {
                     email: email,
 
                     password: password,
+
+                    username: username,
 
                     date: Math.round(Date.now() / 1000),//unix timestamp (seconds)
 

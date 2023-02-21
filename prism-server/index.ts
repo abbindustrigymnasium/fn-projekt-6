@@ -19,7 +19,7 @@ app.get('/', (req: any, res: any) => {
 app.post("/login", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty('email') || reqbody.hasOwnProperty('password')) {
+        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password')) {
             const email = reqbody.email
             const password = reqbody.password
             const exists = !!await prisma.user.findFirst(
@@ -43,10 +43,10 @@ app.post("/login", async (req: any, res: any) => {
                 res.send({ "login": true, "userdata": user })
             }
             else {
-                res.send({ "login": false, "message": "User doesn't exist, try again or sign up" })
+                res.send({ "login": false, "message": "User with that combination doesn't exist, try again or sign up" })
             }
         } else {
-            res.json({ "login": false, "message": `invalid request (${reqbody})` })
+            res.json({ "login": false, "message": `invalid request (${JSON.stringify(reqbody)})` })
         }
     } catch (e) {
         res.json({ "success": false, "error": e })
@@ -57,7 +57,7 @@ app.post("/login", async (req: any, res: any) => {
 app.post("/signup", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty('email') || reqbody.hasOwnProperty('password')) {
+        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password')) {
             const email = reqbody.email
             const password = reqbody.password
             const exists = !!await prisma.user.findFirst(
@@ -98,7 +98,7 @@ app.post("/signup", async (req: any, res: any) => {
             )
             res.json({ "successful": true, "newuser": { newuser }, "message": "new account created" })
         } else {
-            res.json({ "successful": false, "message": `reques (${reqbody}) does not match the keys "password" and "email` })
+            res.json({ "successful": false, "message": `reques (${JSON.stringify(reqbody)}) does not match the keys "password" and "email` })
         }
     } catch (e) {
         res.json({ "success": false, "error": e })
@@ -119,7 +119,7 @@ app.post("/getuserbyid", async (req: any, res: any) => {
             )
             res.json({ "success": true, "userinfo": user })
         } else {
-            res.json({ "success": false, "message": `request (${reqbody}) does not contain "id" key` })
+            res.json({ "success": false, "message": `request (${JSON.stringify(reqbody)}) does not contain "id" key` })
         }
     } catch (e) {
         res.json({ "success": false, "error": e })
@@ -131,7 +131,7 @@ app.post("/getuserbyid", async (req: any, res: any) => {
 app.post("/changebalance", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty("balance") || reqbody.hasOwnProperty("id")) {
+        if (reqbody.hasOwnProperty("balance") && reqbody.hasOwnProperty("id")) {
             const addbalance = reqbody.balance
             const addid = reqbody.id
             const user = await prisma.user.findFirst(
@@ -226,7 +226,7 @@ app.post("/changebalance", async (req: any, res: any) => {
                 )
             }
         } else {
-            res.json({ "success": false, "message": `request (${reqbody}) does not contain the keys "id" and "balance"` })
+            res.json({ "success": false, "message": `request (${JSON.stringify(reqbody)}) does not contain the keys "id" and "balance"` })
         }
 
     } catch (e) {
@@ -295,7 +295,6 @@ app.get("/leaderboardwon", async (req: any, res: any) => {
 app.post("/edituser", async (req: any, res: any) => {
     try {
         let changelist = []
-        let resdata = {}
         let id
         let email
         let password
@@ -375,10 +374,10 @@ app.post("/edituser", async (req: any, res: any) => {
             if (changelist.length > 0) {
                 res.json({ "success": true, "changes": changelist, "message": `changed ${changelist.length} object(s) in the database` })
             } else {
-                res.json({ "success": false, "message": `request (${reqbody}) does not contain any of the keys (email, password, online, suspended, imagelink, username)` })
+                res.json({ "success": false, "message": `request (${JSON.stringify(reqbody)}) does not contain any of the keys (email, password, online, suspended, imagelink, username)` })
             }
         } else {
-            res.json({ "success": false, "message": `request (${reqbody}) does not contain the key "id"` })
+            res.json({ "success": false, "message": `request (${JSON.stringify(reqbody)}) does not contain the key "id"` })
         }
 
     } catch (e) {

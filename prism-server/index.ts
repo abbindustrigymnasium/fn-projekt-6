@@ -1,4 +1,4 @@
-import express from 'express'
+import express from 'express'//npm init -y && npm install prisma
 const app = express()
 var cors = require('cors')
 import { PrismaClient } from '@prisma/client'
@@ -53,6 +53,51 @@ app.post("/login", async (req: any, res: any) => {
     }
 })
 
+//send data like this: {"id": userid}
+app.post("/signout", async (req: any, res: any) => {
+    try {
+        const reqbody = req.body
+        if (reqbody.hasOwnProperty('id')) {
+            const id = reqbody.id
+            const exists = !!await prisma.user.findFirst(
+                {
+                    where: {
+                        id: id
+                    }
+                }
+            )
+            let user = await prisma.user.update(
+                {
+                    where: {
+                        id: id
+                    }, data: {
+                        online: false
+                    }
+                }
+            )
+            let a = await prisma.user.update(
+                {
+                    where: {
+                        id: id
+                    }, data: {
+                        online: true
+                    }
+                }
+            )
+
+            if (exists === true) {
+                res.send({ "signout": true })
+            }
+            else {
+                res.send({ "signout": false, "message": `user with id ${id} doesn't exist` })
+            }
+        } else {
+            res.json({ "login": false, "message": `invalid request (${JSON.stringify(reqbody)})` })
+        }
+    } catch (e) {
+        res.json({ "success": false, "error": e })
+    }
+})
 // send data like this: {"email": "your email", "password": "your password" }
 app.post("/signup", async (req: any, res: any) => {
     try {

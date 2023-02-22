@@ -1,4 +1,6 @@
 import express from 'express'//npm init -y && npm install prisma
+import jwt from "jsonwebtoken"
+
 const app = express()
 var cors = require('cors')
 import { PrismaClient } from '@prisma/client'
@@ -15,6 +17,36 @@ app.get('/', (req: any, res: any) => {
     res.send(`hello from port: ${PORT}`)
 })
 
+const generateAccessToken = (user) => {
+    const config = useRuntimeConfig()
+
+    return jwt.sign({userId: user.id}, config.jwtAccessSecret, {
+        expiresIn: '10m'
+    })
+}
+
+
+
+const generateRefreshToken = (user) => {
+    const config = useRuntimeConfig()
+
+    return jwt.sign({userId: user.id}, config.jwtRefreshSecret, {
+        expiresIn: '4h'
+    })
+}
+
+
+const generateTokens = (user) => {
+
+    const accessToken = generateAccessToken(user)
+    const refreshToken = generateRefreshToken(user)
+
+    return{
+        accessToken: accessToken,
+        refreshToken: refreshToken
+    }
+}
+
 //send data like this: {"email": "your email", "password": "your password", "username":"your username" }
 app.post("/login", async (req: any, res: any) => {
     try {
@@ -23,6 +55,9 @@ app.post("/login", async (req: any, res: any) => {
             const email = reqbody.email
             const password = reqbody.password
             const username = reqbody.username
+            
+            const {accessToken, refreshToken} = generateTokens()
+
             const exists = !!await prisma.user.findFirst(
                 {
                     where: {

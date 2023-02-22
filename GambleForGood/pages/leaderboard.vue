@@ -73,44 +73,6 @@
     </div>
 </template>
 
-<!-- <script> -->
-<!-- // import axios from 'axios'; const endpoint = 'http://localhost:3000'; 
-// export default{
-//     setup(){
-
-// async function getUsers(){
-// try {
-//     const response = await axios.get(`${endpoint}/allusers`);
-//     allusers = response.data;
-//     console.log(allusers)
-
-// } catch (error) {
-//     console.error(error);
-// }}
-// getUsers();
-// return{
-//         allusers:[],
-//         searchQuery: null
-//     }
-//     },
-    
-// computed: {
-//     filtered() {
-//         searchQuery = ref();
-//         if (searchQuery) {
-//                 return allusers.filter(item => {
-//                     return searchQuery
-//                     .toLowerCase()
-//                     .split(" ")
-//                     .every(v => item.email.toLowerCase().includes(v));
-//                 });
-//                 } else{return allusers}
-//     }}
-
-// }
-// </script> -->
-
-
 <script setup>
 import axios from 'axios'; const endpoint = 'http://localhost:3001'
 let allusers = []

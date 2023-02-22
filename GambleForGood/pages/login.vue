@@ -38,7 +38,7 @@
   
                               <div class="mt-6">
                                   <button
-                                      class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-500 rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 focus:ring focus:ring-indigo-300 focus:ring-opacity-50">
+                                      @click="login" class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-500 rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 focus:ring focus:ring-indigo-300 focus:ring-opacity-50">
                                       Sign in
                                   </button>
                               </div>
@@ -52,24 +52,36 @@
           </div>
       </div>
   </template>
-<script>
+
+<script setup>
+import axios from 'axios'; const endpoint = 'http://localhost:3001'; 
 
 definePageMeta({
   layout: "empty",
 });
 
+async function login() {
+  try {
 
-import axios from 'axios'; const endpoint = 'http://localhost:3001'; 
-// async function getData() {
-//   try {
+    const response = await axios.get(`${endpoint}/leaderboarddonate`);
+    const data = response.data;
+    console.log(data);
 
-//     const response = await axios.get(`${endpoint}/allusers`);
-//     const data = response.data;
-//     console.log(data);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// } getData();
+    axios.post(`${endpoint}/login`, {
+      email: _email.value,
+      password: _password.value
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 </script>
 

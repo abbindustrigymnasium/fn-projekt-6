@@ -694,7 +694,14 @@
                </p>
             </div>
          </div>
+         
       </div>
+      <div class="mt-6">
+                                  <button
+                                      @click="this.$router.push('/')" class="flex w-1/3 justify-center px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-500 rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 focus:ring focus:ring-indigo-300 focus:ring-opacity-50">
+                                      Continue
+                                  </button>
+                              </div>
    </div>
 </section>
 <!-- ====== Services Section End -->

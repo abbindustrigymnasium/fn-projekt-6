@@ -46,8 +46,8 @@
         <div>
           <!-- <div v-if="$auth.loggedIn" class="text-white">
           {{ $auth.user.email }}
-          </div>
-          <div v-else class="text-white">log in</div> -->
+          </div> -->
+          <!-- <div class="text-white">name</div> -->
         <button @click="navigate('profile')" class="my-4 inline-block text-white">
           
             <svg class="w-8 h-8 dark:text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

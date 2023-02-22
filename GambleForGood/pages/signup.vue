@@ -86,7 +86,7 @@ async function signup() {
     console.log(_email.value)
     console.log(_password.value)
 
-    await navigateTo('/login')
+    await navigateTo('/organizations')
   
     } catch (error) {
       console.error(error);

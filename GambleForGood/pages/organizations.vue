@@ -23,7 +23,7 @@
                   Our partners
                </h2>
                <p class="text-base text-body-color">
-                  Here are all of FN's global objectives. Select up to three different targets to support.   
+                  Here are all of FN's global objectives. Select up to three different goals to support.   
                </p>
             </div>
          </div>
@@ -729,6 +729,10 @@
 </template>
 
 <script setup>
+
+definePageMeta({
+  layout: "empty",
+});
 
 var Checked = 0;
 function ckChange(ckType){

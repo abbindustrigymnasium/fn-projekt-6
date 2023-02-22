@@ -31,7 +31,7 @@
           </div>
           <ul class="divide-y font-sans">
             <li><button @click="navigate('/')" class="my-4 inline-block text-white">Home</button></li>
-            <li><button @click="navigate('/Casino')" class="my-4 inline-block text-white">Casino</button></li>
+            <li><button @click="navigate('/casino')" class="my-4 inline-block text-white">Casino</button></li>
             <li><button @click="navigate('/leaderboard')" class="my-4 inline-block text-white">Leaderboard</button></li>
             <li><button @click="navigate('/about')" class="my-4 inline-block text-white">About us</button></li>
             <li><button @click="navigate('/login')" class="my-4 inline-block text-white bg-grey-300">Log In</button></li>

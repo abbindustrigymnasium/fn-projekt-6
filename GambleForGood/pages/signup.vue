@@ -21,7 +21,7 @@
                             <label for="" class="text-xs font-semibold px-1">Username</label>
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                <input v-model="_username" type="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="username">
+                                <input class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="username">
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,6 @@ definePageMeta({
 
 const _email = ref();
 const _password = ref();
-const _username = ref();
 
 async function signup() {
     try {
@@ -87,10 +86,13 @@ async function signup() {
     console.log(_password.value)
 
     await navigateTo('/organizations')
+
+    
   
     } catch (error) {
       console.error(error);
     }
   }
+  
 
 </script>

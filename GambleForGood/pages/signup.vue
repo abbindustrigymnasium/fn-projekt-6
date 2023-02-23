@@ -72,8 +72,9 @@ async function signup() {
     try {
 
       axios.post(`${endpoint}/signup`, {
+      
+      password: _password.value,
       email: _email.value,
-      password: _password.value
     })
     .then(function (response) {
       console.log(response);

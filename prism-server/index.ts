@@ -103,10 +103,10 @@ app.post("/signout", async (req: any, res: any) => {
 app.post("/signup", async (req: any, res: any) => {
     try {
         const reqbody = req.body
-        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password') && reqbody.hasOwnProperty('username')) {
+        if (reqbody.hasOwnProperty('email') && reqbody.hasOwnProperty('password')) {
             const email = reqbody.email
             const password = reqbody.password
-            const username = reqbody.username
+            
             const exists = !!await prisma.user.findFirst(
                 {
                     where: {
@@ -127,7 +127,7 @@ app.post("/signup", async (req: any, res: any) => {
 
                     password: password,
 
-                    username: username,
+                    
 
                     date: Math.round(Date.now() / 1000),//unix timestamp (seconds)
 
@@ -147,7 +147,7 @@ app.post("/signup", async (req: any, res: any) => {
             )
             res.json({ "successful": true, "newuser": { newuser }, "message": "new account created" })
         } else {
-            res.json({ "successful": false, "message": `reques (${JSON.stringify(reqbody)}) does not match the keys "password" and "email` })
+            res.json({ "successful": false, "message": `request (${JSON.stringify(reqbody)}) does not match the keys "password" and "email` })
         }
     } catch (e) {
         res.json({ "success": false, "error": e })

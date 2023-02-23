@@ -1,6 +1,7 @@
 <template>
     <div class="bg-gray-800">
-        <h1>Slots Machine</h1>
+        <h1 class="sm:text-4xl text-5xl font-medium font-bold title-font mb-2 text-white ml-4 pt-3">Slots</h1>
+            <div class="h-1 w-20 bg-indigo-500 rounded ml-4"></div>
         <div class="slot-container">
             <div class="slot symbol" v-for="(slot, index) in slots" :key="index">
                 <transition name="slide" >
@@ -9,9 +10,15 @@
                 </transition>
             </div>
         </div>
-        <div class="button-container">
+        <div class="mt-6">
+                                  <button
+                                  @click="spin()" :disabled="disableSpin" class="flex w-1/5 justify-center px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-500 rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 focus:ring focus:ring-indigo-300 focus:ring-opacity-50 mx-auto">
+                                      {{ disableSpin ? 'Spinning...' : 'Spin' }}
+                                  </button>
+                              </div>
+        <!-- <div class="button-container">
             <button class="spin-button" @click="spin()" :disabled="disableSpin">{{ disableSpin ? 'Spinning...' : 'Spin' }}</button>
-        </div>
+        </div> -->
     </div>
 </template>
   

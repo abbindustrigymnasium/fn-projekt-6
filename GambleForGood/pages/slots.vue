@@ -1,15 +1,17 @@
 <template>
-    <div>
+    <div class="bg-gray-800">
         <h1>Slots Machine</h1>
         <div class="slot-container">
-            <div class="slot" v-for="(slot, index) in slots" :key="index">
+            <div class="slot symbol" v-for="(slot, index) in slots" :key="index">
                 <transition name="slide" >
                     <img v-if="spinning" :src="slot.img.default" />
                     <img v-else :src="slot.img.default" />
                 </transition>
             </div>
         </div>
-        <button @click="spin()" :disabled="disableSpin">{{ disableSpin ? 'Spinning...' : 'Spin' }}</button>
+        <div class="button-container">
+            <button class="spin-button" @click="spin()" :disabled="disableSpin">{{ disableSpin ? 'Spinning...' : 'Spin' }}</button>
+        </div>
     </div>
 </template>
   
@@ -20,10 +22,38 @@
 }
 
 .slot {
+    background-color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-width: 10px;
+    border-radius: 5px;
+    border-color: darkslategray;
     width: 200px;
-    height: 200px;
+    height: 300px;
     overflow: hidden;
     position: relative;
+}
+
+.symbol {
+    display: flex;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.spin-button {
+    background-color: white;
+    border-color: darkslategray;
+    border-width: 2.5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 10px;
+    
 }
 
 .slide-enter-active,
